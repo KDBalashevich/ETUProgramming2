@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
-//                                  ВНИМАНИЕ                                  //
+//                                  Р’РќРРњРђРќРР•                                  //
 ////////////////////////////////////////////////////////////////////////////////
-//      Для компиляции под ОС Windows с использованием компилятора MSVC       //
-//                     раскомментируйте следующую строку:                     //
-#define CLEARSCREEN "cls"                                                     //
+//      Р”Р»СЏ РєРѕРјРїРёР»СЏС†РёРё РїРѕРґ РћРЎ Windows СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РєРѕРјРїРёР»СЏС‚РѕСЂР° MSVC       //
+//                     СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ:                     //
+//#define CLEARSCREEN "cls"                                                     //
 ////////////////////////////////////////////////////////////////////////////////
-//   Для компиляции под POSIX-совместимой ОС или ОС Windows с использованием  //
-//           компилятора GCC/G++ раскомментируйте следующую строку:           //
-//#define CLEARSCREEN "clear"                                                 //
+//   Р”Р»СЏ РєРѕРјРїРёР»СЏС†РёРё РїРѕРґ POSIX-СЃРѕРІРјРµСЃС‚РёРјРѕР№ РћРЎ РёР»Рё РћРЎ Windows СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј  //
+//           РєРѕРјРїРёР»СЏС‚РѕСЂР° GCC/G++ СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ:           //
+#define CLEARSCREEN "clear"                                                 //
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -77,7 +77,7 @@ int getNumericAnswer (int minRange, int maxRange, const char *Question)
       {
         std::cin.clear ();
         std::cin.ignore (std::numeric_limits<std::streamsize>::max (), '\n');
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         answer=getNumericAnswer (minRange, maxRange, Question);
         return answer;
       }
@@ -91,28 +91,28 @@ int getNumericAnswer (int minRange, int maxRange, const char *Question)
 listAndArray* mainMenu (listAndArray *ListAndArray)
   {
     system (CLEARSCREEN);
-    std::cout << "Главное меню:\n\nТекущее состояние массива:" << std::endl;
+    std::cout << "Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ:\n\nРўРµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ РјР°СЃСЃРёРІР°:" << std::endl;
     printArray (ListAndArray);
-    std::cout << std::endl << "\nТекущее состояние списка:" << std::endl;
+    std::cout << std::endl << "\nРўРµРєСѓС‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ СЃРїРёСЃРєР°:" << std::endl;
     printList(ListAndArray);
-    std::cout << std::endl << "\n1) Сформировать список и массив случайным обра"
-                 "зом.\n2) Считать список и массив из терминала.\n3) Считать сп"
-                 "исок и массив из файла.\n4) Вставить элемент в список и масси"
-                 "в на произвольную позицию.";
+    std::cout << std::endl << "\n1) РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊ СЃРїРёСЃРѕРє Рё РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹Рј РѕР±СЂР°"
+                 "Р·РѕРј.\n2) РЎС‡РёС‚Р°С‚СЊ СЃРїРёСЃРѕРє Рё РјР°СЃСЃРёРІ РёР· С‚РµСЂРјРёРЅР°Р»Р°.\n3) РЎС‡РёС‚Р°С‚СЊ СЃРї"
+                 "РёСЃРѕРє Рё РјР°СЃСЃРёРІ РёР· С„Р°Р№Р»Р°.\n4) Р’СЃС‚Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ СЃРїРёСЃРѕРє Рё РјР°СЃСЃРё"
+                 "РІ РЅР° РїСЂРѕРёР·РІРѕР»СЊРЅСѓСЋ РїРѕР·РёС†РёСЋ.";
     bool isListEmpty;
     if (ListAndArray!=NULL)
       {
-        std::cout << "\n5) Удалить произвольный элемент из списка и массива.\n6"
-                     ") Вывести значение произвольного элемента массива.\n0) Вы"
-                     "йти из программы.\n" << std::endl;
+        std::cout << "\n5) РЈРґР°Р»РёС‚СЊ РїСЂРѕРёР·РІРѕР»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РёР· СЃРїРёСЃРєР° Рё РјР°СЃСЃРёРІР°.\n6"
+                     ") Р’С‹РІРµСЃС‚Рё Р·РЅР°С‡РµРЅРёРµ РїСЂРѕРёР·РІРѕР»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°.\n0) Р’С‹"
+                     "Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹.\n" << std::endl;
         isListEmpty=0;
       }
     else
       {
-        std::cout << "\n0) Выйти из программы.\n" << std::endl;
+        std::cout << "\n0) Р’С‹Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹.\n" << std::endl;
         isListEmpty=1;
       }
-    switch (getNumericAnswer (0, isListEmpty?4:6, "Введите номер желаемого варианта: "))
+    switch (getNumericAnswer (0, isListEmpty?4:6, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: "))
       {
         case 1:
           ListAndArray=deleteListAndArray (ListAndArray);
@@ -168,7 +168,7 @@ listAndArray* deleteListAndArray (listAndArray *ListAndArray)
 void printList (listAndArray *ListAndArray)
   {
     if (ListAndArray==NULL)
-      std::cout << "Список пуст.";
+      std::cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚.";
     else
       {
         list* List=ListAndArray->List;
@@ -184,7 +184,7 @@ void printList (listAndArray *ListAndArray)
 void printArray (listAndArray *ListAndArray)
   {
     if (ListAndArray==NULL)
-      std::cout << "Массив пуст.";
+      std::cout << "РњР°СЃСЃРёРІ РїСѓСЃС‚.";
     else
       {
         for (int i=0; i<ListAndArray->listSize; i++)
@@ -283,7 +283,7 @@ void deleteElementFromArrayByValue (listAndArray *ListAndArray, int value)
 
 listAndArray* readListFromTerm ()
   {
-    std::cout << "Введите элементы списка/массива в одну строку через пробел: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ СЃРїРёСЃРєР°/РјР°СЃСЃРёРІР° РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ С‡РµСЂРµР· РїСЂРѕР±РµР»: ";
     listAndArray *ListAndArray=createListAndArray ();
     char Buffer;
     Buffer=std::cin.get();
@@ -310,7 +310,7 @@ listAndArray* readListFromTerm ()
           {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Некорректный ввод!" << std::endl;
+            std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
             ListAndArray=deleteListAndArray(ListAndArray);
             ListAndArray=readListFromTerm();
             return ListAndArray;
@@ -327,12 +327,12 @@ listAndArray* readListFromTerm ()
       }
     if (!ListAndArray->listSize)
         ListAndArray=deleteListAndArray(ListAndArray);
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
     return ListAndArray;
   }
@@ -340,7 +340,7 @@ listAndArray* readListFromTerm ()
 listAndArray* readListFromFile ()
   {
     char fileName[261];
-    std::cout << std::endl << "Введите имя (или путь) файла: ";
+    std::cout << std::endl << "Р’РІРµРґРёС‚Рµ РёРјСЏ (РёР»Рё РїСѓС‚СЊ) С„Р°Р№Р»Р°: ";
     std::cin.getline (fileName, 261);
     std::ifstream File;
     File.open (fileName);
@@ -381,17 +381,17 @@ listAndArray* readListFromFile ()
     else
       {
         ListAndArray=deleteListAndArray (ListAndArray);
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         ListAndArray=readListFromFile ();
       }
     if (!ListAndArray->listSize)
         ListAndArray=deleteListAndArray (ListAndArray);
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
     return ListAndArray;
   }
@@ -399,7 +399,7 @@ listAndArray* readListFromFile ()
 listAndArray* generateRandomList ()
   {
     listAndArray *ListAndArray=createListAndArray ();
-    int Size=getNumericAnswer(0, INT_MAX, "Введите число элементов в списке/массиве: ");
+    int Size=getNumericAnswer(0, INT_MAX, "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃРїРёСЃРєРµ/РјР°СЃСЃРёРІРµ: ");
     std::chrono::system_clock::time_point listTimeBegin, listTimeEnd, arrayTimeBegin, arrayTimeEnd;
     for (int i=0; i<Size; i++)
       {
@@ -414,12 +414,12 @@ listAndArray* generateRandomList ()
       }
     if (!ListAndArray->listSize)
         ListAndArray=deleteListAndArray(ListAndArray);
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
     return ListAndArray;
   }
@@ -429,8 +429,8 @@ listAndArray* insertElement (listAndArray *ListAndArray)
     if (ListAndArray==NULL)
         ListAndArray=createListAndArray ();
     std::chrono::system_clock::time_point listTimeBegin, listTimeEnd, arrayTimeBegin, arrayTimeEnd;
-    int position=getNumericAnswer (1, ListAndArray->listSize+1, "Введите номер позиции добавляемого элемента в списке/массиве: ");
-    int value=getNumericAnswer (INT_MIN, INT_MAX, "Введите значение добавляемого элемента: ");
+    int position=getNumericAnswer (1, ListAndArray->listSize+1, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїРѕР·РёС†РёРё РґРѕР±Р°РІР»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ СЃРїРёСЃРєРµ/РјР°СЃСЃРёРІРµ: ");
+    int value=getNumericAnswer (INT_MIN, INT_MAX, "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґРѕР±Р°РІР»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: ");
     listTimeBegin=std::chrono::system_clock::now();
     insertElementToList (ListAndArray, position, value);
     listTimeEnd=std::chrono::system_clock::now();
@@ -438,25 +438,25 @@ listAndArray* insertElement (listAndArray *ListAndArray)
     insertElementToArray (ListAndArray, position, value);
     arrayTimeEnd=std::chrono::system_clock::now();
     ListAndArray->listSize++;
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
     return ListAndArray;
   }
 
 listAndArray* deleteElement (listAndArray *ListAndArray)
   {
-    std::cout << "Удалить элемент по значению или по номеру позиции в массиве/с"
-                 "писке?\n1) По значению.\n2) По позиции." << std::endl;
-    bool byPosition=getNumericAnswer (1, 2, "Введите номер жедаемого варианта: ")-1;
+    std::cout << "РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РїРѕ Р·РЅР°С‡РµРЅРёСЋ РёР»Рё РїРѕ РЅРѕРјРµСЂСѓ РїРѕР·РёС†РёРё РІ РјР°СЃСЃРёРІРµ/СЃ"
+                 "РїРёСЃРєРµ?\n1) РџРѕ Р·РЅР°С‡РµРЅРёСЋ.\n2) РџРѕ РїРѕР·РёС†РёРё." << std::endl;
+    bool byPosition=getNumericAnswer (1, 2, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµРґР°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: ")-1;
     std::chrono::system_clock::time_point listTimeBegin, listTimeEnd, arrayTimeBegin, arrayTimeEnd;
     if (byPosition)
       {
-        int position=getNumericAnswer (1, ListAndArray->listSize+1, "Введите номер позиции удаляемого элемента в списке/массиве: ");
+        int position=getNumericAnswer (1, ListAndArray->listSize+1, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїРѕР·РёС†РёРё СѓРґР°Р»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ СЃРїРёСЃРєРµ/РјР°СЃСЃРёРІРµ: ");
         listTimeBegin=std::chrono::system_clock::now();
         deleteElementFromListByPosition (ListAndArray, position);
         listTimeEnd=std::chrono::system_clock::now();
@@ -469,7 +469,7 @@ listAndArray* deleteElement (listAndArray *ListAndArray)
       }
     else
       {
-        int value=getNumericAnswer (INT_MIN, INT_MAX, "Введите значение удаляемого элемента: ");
+        int value=getNumericAnswer (INT_MIN, INT_MAX, "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ СѓРґР°Р»СЏРµРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: ");
         listTimeBegin=std::chrono::system_clock::now();
         deleteElementFromListByValue (ListAndArray, value);
         listTimeEnd=std::chrono::system_clock::now();
@@ -479,33 +479,33 @@ listAndArray* deleteElement (listAndArray *ListAndArray)
         if (ListAndArray->List==NULL)
             ListAndArray=deleteListAndArray(ListAndArray);
       }
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
     return ListAndArray;
   }
 
 void printElement (listAndArray *ListAndArray)
   {
-    std::cout << "Вывести элемент по значению или по номеру позиции в массиве/с"
-                 "писке?\n1) По значению.\n2) По позиции." << std::endl;
-    bool byPosition=getNumericAnswer (1, 2, "Введите номер жедаемого варианта: ")-1;
+    std::cout << "Р’С‹РІРµСЃС‚Рё СЌР»РµРјРµРЅС‚ РїРѕ Р·РЅР°С‡РµРЅРёСЋ РёР»Рё РїРѕ РЅРѕРјРµСЂСѓ РїРѕР·РёС†РёРё РІ РјР°СЃСЃРёРІРµ/СЃ"
+                 "РїРёСЃРєРµ?\n1) РџРѕ Р·РЅР°С‡РµРЅРёСЋ.\n2) РџРѕ РїРѕР·РёС†РёРё." << std::endl;
+    bool byPosition=getNumericAnswer (1, 2, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµРґР°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: ")-1;
     std::chrono::system_clock::time_point listTimeBegin, listTimeEnd, arrayTimeBegin, arrayTimeEnd;
     if (byPosition)
       {
-        int position=getNumericAnswer (1, ListAndArray->listSize+1, "Введите номер позиции выводимого элемента в списке/массиве: ");
-        std::cout << "Элемент на позиции " << position << " в списке: ";
+        int position=getNumericAnswer (1, ListAndArray->listSize+1, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РїРѕР·РёС†РёРё РІС‹РІРѕРґРёРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ СЃРїРёСЃРєРµ/РјР°СЃСЃРёРІРµ: ");
+        std::cout << "Р­Р»РµРјРµРЅС‚ РЅР° РїРѕР·РёС†РёРё " << position << " РІ СЃРїРёСЃРєРµ: ";
         listTimeBegin=std::chrono::system_clock::now();
         list *List=ListAndArray->List;
         for (int i=1; i<position; i++)
           List=List->next;
         listTimeEnd=std::chrono::system_clock::now();
         std::cout << List->value << std::endl;
-        std::cout << "Элемент на позиции " << position << " в массиве: ";
+        std::cout << "Р­Р»РµРјРµРЅС‚ РЅР° РїРѕР·РёС†РёРё " << position << " РІ РјР°СЃСЃРёРІРµ: ";
         int value;
         arrayTimeBegin=std::chrono::system_clock::now();
         value=*(ListAndArray->Array+position-1);
@@ -514,28 +514,28 @@ void printElement (listAndArray *ListAndArray)
       }
     else
       {
-        int value=getNumericAnswer (INT_MIN, INT_MAX, "Введите значение выводимого элемента: ");
-        std::cout << "Элемент, со значением " << value << " в списке находится "
-                     "на позициях: ";
+        int value=getNumericAnswer (INT_MIN, INT_MAX, "Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РІС‹РІРѕРґРёРјРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: ");
+        std::cout << "Р­Р»РµРјРµРЅС‚, СЃРѕ Р·РЅР°С‡РµРЅРёРµРј " << value << " РІ СЃРїРёСЃРєРµ РЅР°С…РѕРґРёС‚СЃСЏ "
+                     "РЅР° РїРѕР·РёС†РёСЏС…: ";
         listTimeBegin=std::chrono::system_clock::now();
         list *List=ListAndArray->List;
         for (int i=1; List!=NULL; i++, List=List->next)
           if (List->value==value)
             std::cout << i << " ";
         listTimeEnd=std::chrono::system_clock::now();
-        std::cout << "\nЭлемент, со значением " << value << " в массиве находит"
-                     "ся на позициях: ";
+        std::cout << "\nР­Р»РµРјРµРЅС‚, СЃРѕ Р·РЅР°С‡РµРЅРёРµРј " << value << " РІ РјР°СЃСЃРёРІРµ РЅР°С…РѕРґРёС‚"
+                     "СЃСЏ РЅР° РїРѕР·РёС†РёСЏС…: ";
         arrayTimeBegin=std::chrono::system_clock::now();
         for (int i=0; i<ListAndArray->listSize; i++)
           if (*(ListAndArray->Array+i)==value)
             std::cout << i+1 << " ";
         arrayTimeEnd=std::chrono::system_clock::now();
       }
-    std::cout << "\nНа осуществеление операции над списком было затрачено " <<
+    std::cout << "\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ СЃРїРёСЃРєРѕРј Р±С‹Р»Рѕ Р·Р°С‚СЂР°С‡РµРЅРѕ " <<
                  std::chrono::duration_cast<std::chrono::nanoseconds>(listTimeEnd-listTimeBegin).count()
-                 << " наносекунд.\nНа осуществеление операции над массивом было"
-                 " затрачено " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
-                 << " наносекунд.";
-    std::cout << "\nДля возврата в меню нажмите \"Enter\".";
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.\nРќР° РѕСЃСѓС‰РµСЃС‚РІРµР»РµРЅРёРµ РѕРїРµСЂР°С†РёРё РЅР°Рґ РјР°СЃСЃРёРІРѕРј Р±С‹Р»Рѕ"
+                 " Р·Р°С‚СЂР°С‡РµРЅРѕ " << std::chrono::duration_cast<std::chrono::nanoseconds>(arrayTimeEnd-arrayTimeBegin).count()
+                 << " РЅР°РЅРѕСЃРµРєСѓРЅРґ.";
+    std::cout << "\nР”Р»СЏ РІРѕР·РІСЂР°С‚Р° РІ РјРµРЅСЋ РЅР°Р¶РјРёС‚Рµ \"Enter\".";
     std::cin.get();
   }
