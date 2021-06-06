@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////////////////////////////////
-//                                  ВНИМАНИЕ                                  //
+//                                  Р’РќРРњРђРќРР•                                  //
 ////////////////////////////////////////////////////////////////////////////////
-//      Для компиляции под ОС Windows с использованием компилятора MSVC       //
-//                     раскомментируйте следующую строку:                     //
+//      Р”Р»СЏ РєРѕРјРїРёР»СЏС†РёРё РїРѕРґ РћРЎ Windows СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РєРѕРјРїРёР»СЏС‚РѕСЂР° MSVC       //
+//                     СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ:                     //
 #define CLEARSCREEN "cls"                                                     //
 ////////////////////////////////////////////////////////////////////////////////
-//   Для компиляции под POSIX-совместимой ОС или ОС Windows с использованием  //
-//           компилятора GCC/G++ раскомментируйте следующую строку:           //
+//   Р”Р»СЏ РєРѕРјРїРёР»СЏС†РёРё РїРѕРґ POSIX-СЃРѕРІРјРµСЃС‚РёРјРѕР№ РћРЎ РёР»Рё РћРЎ Windows СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј  //
+//           РєРѕРјРїРёР»СЏС‚РѕСЂР° GCC/G++ СЂР°СЃРєРѕРјРјРµРЅС‚РёСЂСѓР№С‚Рµ СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ:           //
 //#define CLEARSCREEN "clear"                                                 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -79,13 +79,13 @@ int main ()
 student* mainMenu (student *List)
   {
     system (CLEARSCREEN);
-    std::cout << "Главное меню:" << std::endl << std::endl << "1) Вывести полны"
-                 "й список студентов." << std::endl << "2) Добавить студента из"
-                 " терминала." << std::endl << "3) Добавить студентов из файла."
-                 << std::endl << "4) Вывести список студентов по фильтру." <<
-                 std::endl << "5) Вывод всех данных в файл." << std::endl <<
-                 "0) Выход из программы." << std::endl << std::endl;
-    switch (getNumericAnswer (0, 5, "Введите номер желаемого варианта: "))
+    std::cout << "Р“Р»Р°РІРЅРѕРµ РјРµРЅСЋ:" << std::endl << std::endl << "1) Р’С‹РІРµСЃС‚Рё РїРѕР»РЅС‹"
+                 "Р№ СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ." << std::endl << "2) Р”РѕР±Р°РІРёС‚СЊ СЃС‚СѓРґРµРЅС‚Р° РёР·"
+                 " С‚РµСЂРјРёРЅР°Р»Р°." << std::endl << "3) Р”РѕР±Р°РІРёС‚СЊ СЃС‚СѓРґРµРЅС‚РѕРІ РёР· С„Р°Р№Р»Р°."
+                 << std::endl << "4) Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ РїРѕ С„РёР»СЊС‚СЂСѓ." <<
+                 std::endl << "5) Р’С‹РІРѕРґ РІСЃРµС… РґР°РЅРЅС‹С… РІ С„Р°Р№Р»." << std::endl <<
+                 "0) Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹." << std::endl << std::endl;
+    switch (getNumericAnswer (0, 5, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: "))
       {
         case 1:
           studentList(List);
@@ -116,7 +116,7 @@ student* mainMenu (student *List)
 student* addStudentFromTerminal (student *List)
   {
     system (CLEARSCREEN);
-    std::cout << "Добавление студента:" << std::endl << std::endl;
+    std::cout << "Р”РѕР±Р°РІР»РµРЅРёРµ СЃС‚СѓРґРµРЅС‚Р°:" << std::endl << std::endl;
     listSize++;
     List=(student*)realloc(List, listSize*sizeof(student));
     student *Student=List+listSize-1;
@@ -158,7 +158,7 @@ int getNumericAnswer (int minRange, int maxRange, const char *Question)
       {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         answer=getNumericAnswer (minRange, maxRange, Question);
         return answer;
       }
@@ -172,7 +172,7 @@ int getNumericAnswer (int minRange, int maxRange, const char *Question)
 student* addStudentsFromFile (student *List)
   {
     char fileName[261];
-    std::cout << std::endl << "Введите имя (или путь) файла (по умолчанию - students): ";
+    std::cout << std::endl << "Р’РІРµРґРёС‚Рµ РёРјСЏ (РёР»Рё РїСѓС‚СЊ) С„Р°Р№Р»Р° (РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ - students): ";
     std::cin.getline (fileName, 261);
     if (fileName[0]=='\0') strcpy(fileName, "students");
     std::ifstream File;
@@ -216,7 +216,7 @@ student* addStudentsFromFile (student *List)
       }
     else
       {
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         List=addStudentsFromFile(List);
       }
     return List;
@@ -225,13 +225,13 @@ student* addStudentsFromFile (student *List)
 void studentList (student *List)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов в базе:" << std::endl << std::endl;
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ РІ Р±Р°Р·Рµ:" << std::endl << std::endl;
     for (unsigned int i=0; i<listSize; i++)
       {
         std::cout << i+1 << ". " << (List+i)->Name << std::endl;
       }
     std::cout << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -243,17 +243,17 @@ void studentMenu (student *List, unsigned int studentNumber)
   {
     system (CLEARSCREEN);
     printStudentInfo (List, studentNumber);
-    std::cout << std::endl << std::endl << "Меню работы с данными студента:" <<
-                 std::endl << std::endl << "1) Изменить сведения о ФИО студента"
-                 "." << std::endl << "2) Изменить сведения о поле студента." <<
-                 std::endl << "3) Изменить сведения о группе студента." <<
-                 std::endl << "4) Изменить сведения о номере студента в списке "
-                 "группы." << std::endl << "5) Изменить сведения об оценках сту"
-                 "дента." << std::endl << "6) Изменить сведения о форме обучени"
-                 "я студента." << std::endl << "0) Вернуться в главное меню." <<
+    std::cout << std::endl << std::endl << "РњРµРЅСЋ СЂР°Р±РѕС‚С‹ СЃ РґР°РЅРЅС‹РјРё СЃС‚СѓРґРµРЅС‚Р°:" <<
+                 std::endl << std::endl << "1) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ Рѕ Р¤РРћ СЃС‚СѓРґРµРЅС‚Р°"
+                 "." << std::endl << "2) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ Рѕ РїРѕР»Рµ СЃС‚СѓРґРµРЅС‚Р°." <<
+                 std::endl << "3) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ Рѕ РіСЂСѓРїРїРµ СЃС‚СѓРґРµРЅС‚Р°." <<
+                 std::endl << "4) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ Рѕ РЅРѕРјРµСЂРµ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ "
+                 "РіСЂСѓРїРїС‹." << std::endl << "5) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ РѕР± РѕС†РµРЅРєР°С… СЃС‚Сѓ"
+                 "РґРµРЅС‚Р°." << std::endl << "6) РР·РјРµРЅРёС‚СЊ СЃРІРµРґРµРЅРёСЏ Рѕ С„РѕСЂРјРµ РѕР±СѓС‡РµРЅРё"
+                 "СЏ СЃС‚СѓРґРµРЅС‚Р°." << std::endl << "0) Р’РµСЂРЅСѓС‚СЊСЃСЏ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ." <<
                  std::endl << std::endl;
     student *Student=List+studentNumber-1;
-    switch (getNumericAnswer (0, 6, "Введите номер желаемого варианта: "))
+    switch (getNumericAnswer (0, 6, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: "))
       {
         case 1:
           changeStudentName (Student, 0);
@@ -292,51 +292,51 @@ void studentMenu (student *List, unsigned int studentNumber)
 void printStudentInfo (student *List, unsigned int studentNumber)
   {
     student *Student=List+studentNumber-1;
-    std::cout << "Студент " << studentNumber << std::endl << std::endl << "ФИО "
-                 "студента: " << Student->Name << std::endl << "Пол студента:";
+    std::cout << "РЎС‚СѓРґРµРЅС‚ " << studentNumber << std::endl << std::endl << "Р¤РРћ "
+                 "СЃС‚СѓРґРµРЅС‚Р°: " << Student->Name << std::endl << "РџРѕР» СЃС‚СѓРґРµРЅС‚Р°:";
     switch (Student->Sex)
       {
         case 1:
-          std::cout << " мужской.";
+          std::cout << " РјСѓР¶СЃРєРѕР№.";
           break;
         default:
-          std::cout << " женский.";
+          std::cout << " Р¶РµРЅСЃРєРёР№.";
           break;
       }
-    std::cout << std::endl << "Номер группы студента: " << Student->Group <<
-                 std::endl << "Номер студента в списке группы: " <<
-                 Student->Number << std::endl << "Оценка студента за первый экз"
-                 "амен: " << Student->Ekz1 << std::endl << "Оценка студента за "
-                 "второй экзамен: " << Student->Ekz2 << std::endl << "Оценка ст"
-                 "удента за третий экзамен: " << Student->Ekz3 << std::endl <<
-                 "Оценка студента за первый зачёт: " << Student->Diff1 <<
-                 std::endl << "Оценка студента за второй зачёт: " <<
-                 Student->Diff2 << std::endl << "Оценка студента за третий зачё"
-                 "т: " << Student->Diff3 << std::endl << "Оценка студента за че"
-                 "твёртый зачёт: " << Student->Diff4 << std::endl << "Оценка ст"
-                 "удента за пятый зачёт: " << Student->Diff5 << std::endl <<
-                 "Форма обучения студента: ";
+    std::cout << std::endl << "РќРѕРјРµСЂ РіСЂСѓРїРїС‹ СЃС‚СѓРґРµРЅС‚Р°: " << Student->Group <<
+                 std::endl << "РќРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹: " <<
+                 Student->Number << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ СЌРєР·"
+                 "Р°РјРµРЅ: " << Student->Ekz1 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° "
+                 "РІС‚РѕСЂРѕР№ СЌРєР·Р°РјРµРЅ: " << Student->Ekz2 << std::endl << "РћС†РµРЅРєР° СЃС‚"
+                 "СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ СЌРєР·Р°РјРµРЅ: " << Student->Ekz3 << std::endl <<
+                 "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ Р·Р°С‡С‘С‚: " << Student->Diff1 <<
+                 std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РІС‚РѕСЂРѕР№ Р·Р°С‡С‘С‚: " <<
+                 Student->Diff2 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ Р·Р°С‡С‘"
+                 "С‚: " << Student->Diff3 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‡Рµ"
+                 "С‚РІС‘СЂС‚С‹Р№ Р·Р°С‡С‘С‚: " << Student->Diff4 << std::endl << "РћС†РµРЅРєР° СЃС‚"
+                 "СѓРґРµРЅС‚Р° Р·Р° РїСЏС‚С‹Р№ Р·Р°С‡С‘С‚: " << Student->Diff5 << std::endl <<
+                 "Р¤РѕСЂРјР° РѕР±СѓС‡РµРЅРёСЏ СЃС‚СѓРґРµРЅС‚Р°: ";
     switch (Student->Form)
       {
         case 1:
-          std::cout << "очная.";
+          std::cout << "РѕС‡РЅР°СЏ.";
           break;
         case 2:
-          std::cout << "очно-заочная.";
+          std::cout << "РѕС‡РЅРѕ-Р·Р°РѕС‡РЅР°СЏ.";
           break;
         default:
-          std::cout << "заочная.";
+          std::cout << "Р·Р°РѕС‡РЅР°СЏ.";
           break;
       }
-      std::cout << std::endl << "Дата внесения изменений в запись: " <<
+      std::cout << std::endl << "Р”Р°С‚Р° РІРЅРµСЃРµРЅРёСЏ РёР·РјРµРЅРµРЅРёР№ РІ Р·Р°РїРёСЃСЊ: " <<
                    asctime(localtime(&Student->modificationTime));
   }
 
 void changeStudentName (student *Student, bool isNew)
   {
-    if (!isNew) std::cout << std::endl << "Текущие сведения о ФИО студента: " <<
+    if (!isNew) std::cout << std::endl << "РўРµРєСѓС‰РёРµ СЃРІРµРґРµРЅРёСЏ Рѕ Р¤РРћ СЃС‚СѓРґРµРЅС‚Р°: " <<
                              Student->Name << std::endl;
-    std::cout << "Введите ФИО студента: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ Р¤РРћ СЃС‚СѓРґРµРЅС‚Р°: ";
     std::cin.getline (Student->Name, 101);
   }
 
@@ -344,56 +344,56 @@ void changeStudentSex (student *Student, bool isNew)
   {
     if (!isNew) 
       {
-        std::cout << std::endl << "Текущие сведения о поле студента: ";
+        std::cout << std::endl << "РўРµРєСѓС‰РёРµ СЃРІРµРґРµРЅРёСЏ Рѕ РїРѕР»Рµ СЃС‚СѓРґРµРЅС‚Р°: ";
         switch (Student->Sex)
           {
             case 1:
-              std::cout << "мужской." << std::endl;
+              std::cout << "РјСѓР¶СЃРєРѕР№." << std::endl;
               break;
             default:
-              std::cout << "женский." << std::endl;
+              std::cout << "Р¶РµРЅСЃРєРёР№." << std::endl;
               break;
           }
       }
-    std::cout << "Выберите пол студента:" << std::endl << "1) мужской пол." <<
-                 std::endl << "2) женский пол." << std::endl;
-    Student->Sex=getNumericAnswer (1, 2, "Введите номер желаемого варианта: ");
+    std::cout << "Р’С‹Р±РµСЂРёС‚Рµ РїРѕР» СЃС‚СѓРґРµРЅС‚Р°:" << std::endl << "1) РјСѓР¶СЃРєРѕР№ РїРѕР»." <<
+                 std::endl << "2) Р¶РµРЅСЃРєРёР№ РїРѕР»." << std::endl;
+    Student->Sex=getNumericAnswer (1, 2, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: ");
   }
 
 void changeStudentGroup (student *Student, bool isNew)
   {
-    if (!isNew) std::cout << std::endl << "Текущие сведения о группе студента: "
+    if (!isNew) std::cout << std::endl << "РўРµРєСѓС‰РёРµ СЃРІРµРґРµРЅРёСЏ Рѕ РіСЂСѓРїРїРµ СЃС‚СѓРґРµРЅС‚Р°: "
                           << Student->Group << std::endl;
-    std::cout << "Введите номер группы студента: ";
+    std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹ СЃС‚СѓРґРµРЅС‚Р°: ";
     std::cin.getline (Student->Group, 11);
   }
 
 void changeStudentNumber (student *Student, bool isNew)
   {
-    if (!isNew) std::cout << std::endl << "Текущие сведения о номере студента в"
-                             " списке группы: " << Student->Number << std::endl;
-    Student->Number=getNumericAnswer(0, 100, "Введите номер студента в списке группы: ");
+    if (!isNew) std::cout << std::endl << "РўРµРєСѓС‰РёРµ СЃРІРµРґРµРЅРёСЏ Рѕ РЅРѕРјРµСЂРµ СЃС‚СѓРґРµРЅС‚Р° РІ"
+                             " СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹: " << Student->Number << std::endl;
+    Student->Number=getNumericAnswer(0, 100, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹: ");
   }
 
 void studentGradesMenu (student *Student)
   {
     system (CLEARSCREEN);
-    std::cout << "Оценки студента: " << std::endl << std::endl << "Оценка студента за первый э"
-                 "кзамен: " << Student->Ekz1 << std::endl << "Оценка студента за второй э"
-                 "кзамен: " << Student->Ekz2 << std::endl << "Оценка студента за третий э"
-                 "кзамен: " << Student->Ekz3 << std::endl << "Оценка студента за первый з"
-                 "ачёт: " << Student->Diff1 << std::endl << "Оценка студента за второй за"
-                 "чёт: " << Student->Diff2 << std::endl << "Оценка студента за третий зач"
-                 "ёт: " << Student->Diff3 << std::endl << "Оценка студента за четвёртый з"
-                 "ачёт: " << Student->Diff4 << std::endl << "Оценка студента за пятый зач"
-                 "ёт: " << Student->Diff5 << std::endl << std::endl << "Вы хотите изменить све"
-                 "дения о зачёте или экзамене?" << std::endl << "1) Изменить оценку за за"
-                 "чёт." << std::endl << "2) Изменить оценку за экзамен." << std::endl << "0) В"
-                 "ернуться в предыдущее меню." << std::endl;
-    switch (getNumericAnswer(0, 2, "Введите номер желаемого варианта: "))
+    std::cout << "РћС†РµРЅРєРё СЃС‚СѓРґРµРЅС‚Р°: " << std::endl << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ СЌ"
+                 "РєР·Р°РјРµРЅ: " << Student->Ekz1 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РІС‚РѕСЂРѕР№ СЌ"
+                 "РєР·Р°РјРµРЅ: " << Student->Ekz2 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ СЌ"
+                 "РєР·Р°РјРµРЅ: " << Student->Ekz3 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ Р·"
+                 "Р°С‡С‘С‚: " << Student->Diff1 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РІС‚РѕСЂРѕР№ Р·Р°"
+                 "С‡С‘С‚: " << Student->Diff2 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ Р·Р°С‡"
+                 "С‘С‚: " << Student->Diff3 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‡РµС‚РІС‘СЂС‚С‹Р№ Р·"
+                 "Р°С‡С‘С‚: " << Student->Diff4 << std::endl << "РћС†РµРЅРєР° СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїСЏС‚С‹Р№ Р·Р°С‡"
+                 "С‘С‚: " << Student->Diff5 << std::endl << std::endl << "Р’С‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ СЃРІРµ"
+                 "РґРµРЅРёСЏ Рѕ Р·Р°С‡С‘С‚Рµ РёР»Рё СЌРєР·Р°РјРµРЅРµ?" << std::endl << "1) РР·РјРµРЅРёС‚СЊ РѕС†РµРЅРєСѓ Р·Р° Р·Р°"
+                 "С‡С‘С‚." << std::endl << "2) РР·РјРµРЅРёС‚СЊ РѕС†РµРЅРєСѓ Р·Р° СЌРєР·Р°РјРµРЅ." << std::endl << "0) Р’"
+                 "РµСЂРЅСѓС‚СЊСЃСЏ РІ РїСЂРµРґС‹РґСѓС‰РµРµ РјРµРЅСЋ." << std::endl;
+    switch (getNumericAnswer(0, 2, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: "))
       {
         case 1:
-          switch (getNumericAnswer(1,5,"Введите номер зачёта, оценку за который вы желаете изменить: "))
+          switch (getNumericAnswer(1,5,"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°С‡С‘С‚Р°, РѕС†РµРЅРєСѓ Р·Р° РєРѕС‚РѕСЂС‹Р№ РІС‹ Р¶РµР»Р°РµС‚Рµ РёР·РјРµРЅРёС‚СЊ: "))
             {
               case 1:
                 changeStudentGrades(Student, 4);
@@ -415,7 +415,7 @@ void studentGradesMenu (student *Student)
           studentGradesMenu (Student);
           break;
         case 2:
-          switch (getNumericAnswer(1,3,"Введите номер экзамена, оценку за который вы желаете изменить: "))
+          switch (getNumericAnswer(1,3,"Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌРєР·Р°РјРµРЅР°, РѕС†РµРЅРєСѓ Р·Р° РєРѕС‚РѕСЂС‹Р№ РІС‹ Р¶РµР»Р°РµС‚Рµ РёР·РјРµРЅРёС‚СЊ: "))
             {
               case 1:
                 changeStudentGrades(Student, 1);
@@ -440,28 +440,28 @@ void changeStudentGrades (student *Student, short request)
     switch (request)
       {
         case 1:
-          Student->Ekz1=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за первый экзамен: ");
+          Student->Ekz1=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ СЌРєР·Р°РјРµРЅ: ");
           break;
         case 2:
-          Student->Ekz2=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за второй экзамен: ");
+          Student->Ekz2=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° РІС‚РѕСЂРѕР№ СЌРєР·Р°РјРµРЅ: ");
           break;
         case 3:
-          Student->Ekz3=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за третий экзамен: ");
+          Student->Ekz3=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ СЌРєР·Р°РјРµРЅ: ");
           break;
         case 4:
-          Student->Diff1=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за первый зачёт: ");
+          Student->Diff1=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїРµСЂРІС‹Р№ Р·Р°С‡С‘С‚: ");
           break;
         case 5:
-          Student->Diff2=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за второй зачёт: ");
+          Student->Diff2=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° РІС‚РѕСЂРѕР№ Р·Р°С‡С‘С‚: ");
           break;
         case 6:
-          Student->Diff3=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за третий зачёт: ");
+          Student->Diff3=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‚СЂРµС‚РёР№ Р·Р°С‡С‘С‚: ");
           break;
         case 7:
-          Student->Diff4=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за четвёртый зачёт: ");
+          Student->Diff4=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° С‡РµС‚РІС‘СЂС‚С‹Р№ Р·Р°С‡С‘С‚: ");
           break;
         case 8:
-          Student->Diff5=getNumericAnswer(2, 5, "Пожалуйста, введите оценку студента за пятый зачёт: ");
+          Student->Diff5=getNumericAnswer(2, 5, "РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РѕС†РµРЅРєСѓ СЃС‚СѓРґРµРЅС‚Р° Р·Р° РїСЏС‚С‹Р№ Р·Р°С‡С‘С‚: ");
           break;
       }
   }
@@ -470,30 +470,30 @@ void changeStudentForm (student *Student, bool isNew)
   {
     if (!isNew)
       {
-        std::cout << std::endl << "Текущие сведения о форме обучения студента: ";
+        std::cout << std::endl << "РўРµРєСѓС‰РёРµ СЃРІРµРґРµРЅРёСЏ Рѕ С„РѕСЂРјРµ РѕР±СѓС‡РµРЅРёСЏ СЃС‚СѓРґРµРЅС‚Р°: ";
         switch (Student->Form)
           {
             case 3:
-              std::cout << "заочная форма." << std::endl;
+              std::cout << "Р·Р°РѕС‡РЅР°СЏ С„РѕСЂРјР°." << std::endl;
               break;
             case 2:
-              std::cout << "очно-заочная форма." << std::endl;
+              std::cout << "РѕС‡РЅРѕ-Р·Р°РѕС‡РЅР°СЏ С„РѕСЂРјР°." << std::endl;
               break;
             default:
-              std::cout << "очная форма." << std::endl;
+              std::cout << "РѕС‡РЅР°СЏ С„РѕСЂРјР°." << std::endl;
               break;
           }
       }
-    std::cout << "Выберите форму обучения студента:" << std::endl << "1) Очная "
-                 "форма." << std::endl << "2) Очно-заочная форма." << std::endl
-                 << "3) Заочная форма." << std::endl;
-    Student->Form=getNumericAnswer (1, 3, "Введите номер желаемого варианта: ");
+    std::cout << "Р’С‹Р±РµСЂРёС‚Рµ С„РѕСЂРјСѓ РѕР±СѓС‡РµРЅРёСЏ СЃС‚СѓРґРµРЅС‚Р°:" << std::endl << "1) РћС‡РЅР°СЏ "
+                 "С„РѕСЂРјР°." << std::endl << "2) РћС‡РЅРѕ-Р·Р°РѕС‡РЅР°СЏ С„РѕСЂРјР°." << std::endl
+                 << "3) Р—Р°РѕС‡РЅР°СЏ С„РѕСЂРјР°." << std::endl;
+    Student->Form=getNumericAnswer (1, 3, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: ");
   }
 
 void dumpListToFile (student *List)
   {
     char fileName[261];
-    std::cout << std::endl << "Введите имя (или путь) файла (по умолчанию - students): ";
+    std::cout << std::endl << "Р’РІРµРґРёС‚Рµ РёРјСЏ (РёР»Рё РїСѓС‚СЊ) С„Р°Р№Р»Р° (РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ - students): ";
     std::cin.getline (fileName, 261);
     if (fileName[0]=='\0') strcpy(fileName, "students");
     std::ofstream File;
@@ -530,41 +530,41 @@ void dumpListToFile (student *List)
       }
     else
       {
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         List=addStudentsFromFile(List);
       }
   }
   
 void listFilterChoise (student *List)
   {
-    bool answer=getNumericAnswer(1, 2, "\nВыберите желаемый формат списков:\n1)Краткий\n2)Длинный\n\nВведите желаемый вариант: ")-1;
+    bool answer=getNumericAnswer(1, 2, "\nР’С‹Р±РµСЂРёС‚Рµ Р¶РµР»Р°РµРјС‹Р№ С„РѕСЂРјР°С‚ СЃРїРёСЃРєРѕРІ:\n1)РљСЂР°С‚РєРёР№\n2)Р”Р»РёРЅРЅС‹Р№\n\nР’РІРµРґРёС‚Рµ Р¶РµР»Р°РµРјС‹Р№ РІР°СЂРёР°РЅС‚: ")-1;
     listFilter(List, answer);
   }  
   
 void listFilter (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Вывести список студентов, соответствующих критериям:" << 
-                 std::endl << std::endl << "1) Вывести список студентов конкрет"
-                 "ной группы." << std::endl << "2) Вывести топ студентов с наив"
-                 "ысшим средним баллом за прошедшую сессию." << std::endl << "3"
-                 ") Вывод списков студентов мужского и женского полов." <<
-                 std::endl << "4) Вывести список студентов, которые будут получ"
-                 "ать стипендию по итогам прошедшей сессии." << std::endl << "5"
-                 ") Вывести список студентов, которые не будут получают стипенд"
-                 "ию." << std::endl << "6) Вывести список студентов, которые уч"
-                 "атся только на \"хорошо\" и \"отлично\"." << std::endl << "7)"
-                 " Вывести список студентов, которые учатся только на \"отлично"
-                 "\"." << std::endl << "8) Выводести список всех студентов, име"
-                 "ющих конкретный номер в списке группы." << std::endl << "9) В"
-                 "ывод всех записей, сделанных/изменённых в конкретный промежут"
-                 "ок времени." << std::endl << "0) Возврат в главное меню." <<
+    std::cout << "Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… РєСЂРёС‚РµСЂРёСЏРј:" << 
+                 std::endl << std::endl << "1) Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ РєРѕРЅРєСЂРµС‚"
+                 "РЅРѕР№ РіСЂСѓРїРїС‹." << std::endl << "2) Р’С‹РІРµСЃС‚Рё С‚РѕРї СЃС‚СѓРґРµРЅС‚РѕРІ СЃ РЅР°РёРІ"
+                 "С‹СЃС€РёРј СЃСЂРµРґРЅРёРј Р±Р°Р»Р»РѕРј Р·Р° РїСЂРѕС€РµРґС€СѓСЋ СЃРµСЃСЃРёСЋ." << std::endl << "3"
+                 ") Р’С‹РІРѕРґ СЃРїРёСЃРєРѕРІ СЃС‚СѓРґРµРЅС‚РѕРІ РјСѓР¶СЃРєРѕРіРѕ Рё Р¶РµРЅСЃРєРѕРіРѕ РїРѕР»РѕРІ." <<
+                 std::endl << "4) Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РїРѕР»СѓС‡"
+                 "Р°С‚СЊ СЃС‚РёРїРµРЅРґРёСЋ РїРѕ РёС‚РѕРіР°Рј РїСЂРѕС€РµРґС€РµР№ СЃРµСЃСЃРёРё." << std::endl << "5"
+                 ") Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ РЅРµ Р±СѓРґСѓС‚ РїРѕР»СѓС‡Р°СЋС‚ СЃС‚РёРїРµРЅРґ"
+                 "РёСЋ." << std::endl << "6) Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡"
+                 "Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"С…РѕСЂРѕС€Рѕ\" Рё \"РѕС‚Р»РёС‡РЅРѕ\"." << std::endl << "7)"
+                 " Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"РѕС‚Р»РёС‡РЅРѕ"
+                 "\"." << std::endl << "8) Р’С‹РІРѕРґРµСЃС‚Рё СЃРїРёСЃРѕРє РІСЃРµС… СЃС‚СѓРґРµРЅС‚РѕРІ, РёРјРµ"
+                 "СЋС‰РёС… РєРѕРЅРєСЂРµС‚РЅС‹Р№ РЅРѕРјРµСЂ РІ СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹." << std::endl << "9) Р’"
+                 "С‹РІРѕРґ РІСЃРµС… Р·Р°РїРёСЃРµР№, СЃРґРµР»Р°РЅРЅС‹С…/РёР·РјРµРЅС‘РЅРЅС‹С… РІ РєРѕРЅРєСЂРµС‚РЅС‹Р№ РїСЂРѕРјРµР¶СѓС‚"
+                 "РѕРє РІСЂРµРјРµРЅРё." << std::endl << "0) Р’РѕР·РІСЂР°С‚ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ." <<
                  std::endl << std::endl;
-    switch (getNumericAnswer (0, 9, "Введите номер желаемого варианта: "))
+    switch (getNumericAnswer (0, 9, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р¶РµР»Р°РµРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°: "))
       {
         case 1:
           {
-            std::cout << "Введите номер группы: ";
+            std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹: ";
             char Group[11];
             std::cin.getline(Group, 11);
             listGroup(List, length, Group);
@@ -597,7 +597,7 @@ void listFilter (student *List, bool length)
           break;
         case 8:
           {
-            int number=getNumericAnswer(0, 9999, "Введите номер студента в списке группы: ");
+            int number=getNumericAnswer(0, 9999, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹: ");
             listNumber(List, length, number);
             listFilter(List, length);
             break;
@@ -605,7 +605,7 @@ void listFilter (student *List, bool length)
         case 9:
           {
             tm Day=getTmDate();
-            int answer=getNumericAnswer(0, 2, "Вывести список записей, сделанных:\n\n0) в течении всего дня.\n1) до полудня.\n2) после полудня.\n\nВведите желаемы вариант: ");
+            int answer=getNumericAnswer(0, 2, "Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє Р·Р°РїРёСЃРµР№, СЃРґРµР»Р°РЅРЅС‹С…:\n\n0) РІ С‚РµС‡РµРЅРёРё РІСЃРµРіРѕ РґРЅСЏ.\n1) РґРѕ РїРѕР»СѓРґРЅСЏ.\n2) РїРѕСЃР»Рµ РїРѕР»СѓРґРЅСЏ.\n\nР’РІРµРґРёС‚Рµ Р¶РµР»Р°РµРјС‹ РІР°СЂРёР°РЅС‚: ");
             listTime(List, length, Day, answer);
             listFilter(List, length);
             break;
@@ -618,7 +618,7 @@ void listFilter (student *List, bool length)
 void listGroup (student *List, bool length, const char *Group)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов в группе " << Group << ":" << std::endl <<
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ РІ РіСЂСѓРїРїРµ " << Group << ":" << std::endl <<
                  std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
@@ -637,9 +637,9 @@ void listGroup (student *List, bool length, const char *Group)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов в группе " << Group << ": " <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РІ РіСЂСѓРїРїРµ " << Group << ": " <<
                  studentNumber << "." << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -650,7 +650,7 @@ void listGroup (student *List, bool length, const char *Group)
 void listTop (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Топ студентов с наивысшим средним баллом за прошедшую сессию:"
+    std::cout << "РўРѕРї СЃС‚СѓРґРµРЅС‚РѕРІ СЃ РЅР°РёРІС‹СЃС€РёРј СЃСЂРµРґРЅРёРј Р±Р°Р»Р»РѕРј Р·Р° РїСЂРѕС€РµРґС€СѓСЋ СЃРµСЃСЃРёСЋ:"
               << std::endl << std::endl;
     struct sortList
       {
@@ -698,7 +698,7 @@ void listTop (student *List, bool length)
               }
       }
     std::cout << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -710,7 +710,7 @@ void listTop (student *List, bool length)
 void listSex (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов мужского пола:" << std::endl;
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ РјСѓР¶СЃРєРѕРіРѕ РїРѕР»Р°:" << std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
       {
@@ -728,9 +728,9 @@ void listSex (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов мужского пола: " << studentNumber
-              << "." << std::endl << std::endl << "Список студентов женского по"
-              "ла:" << std::endl;
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ РјСѓР¶СЃРєРѕРіРѕ РїРѕР»Р°: " << studentNumber
+              << "." << std::endl << std::endl << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ Р¶РµРЅСЃРєРѕРіРѕ РїРѕ"
+              "Р»Р°:" << std::endl;
     studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
       {
@@ -748,9 +748,9 @@ void listSex (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов женского пола: " << studentNumber
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ Р¶РµРЅСЃРєРѕРіРѕ РїРѕР»Р°: " << studentNumber
               << "." << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -761,7 +761,7 @@ void listSex (student *List, bool length)
 void listStipend (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, получающих стипендию:" << std::endl <<
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РїРѕР»СѓС‡Р°СЋС‰РёС… СЃС‚РёРїРµРЅРґРёСЋ:" << std::endl <<
                  std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
@@ -780,9 +780,9 @@ void listStipend (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, получающих стипендию: " <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, РїРѕР»СѓС‡Р°СЋС‰РёС… СЃС‚РёРїРµРЅРґРёСЋ: " <<
                  studentNumber << "." << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -793,7 +793,7 @@ void listStipend (student *List, bool length)
 void listStipendLess (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, не получающих стипендию:" << std::endl <<
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РЅРµ РїРѕР»СѓС‡Р°СЋС‰РёС… СЃС‚РёРїРµРЅРґРёСЋ:" << std::endl <<
                  std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
@@ -812,9 +812,9 @@ void listStipendLess (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, не получающих стипендию: " <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, РЅРµ РїРѕР»СѓС‡Р°СЋС‰РёС… СЃС‚РёРїРµРЅРґРёСЋ: " <<
                  studentNumber << "." << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -825,8 +825,8 @@ void listStipendLess (student *List, bool length)
 void listFourFive (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, которые учатся только на \"хорошо\" и \"отл"
-                 "ично\":" << std::endl << std::endl;
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"С…РѕСЂРѕС€Рѕ\" Рё \"РѕС‚Р»"
+                 "РёС‡РЅРѕ\":" << std::endl << std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
       {
@@ -844,10 +844,10 @@ void listFourFive (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, которые учатся только на \"хоро"
-                 "шо\" и \"отлично\": " << studentNumber << "." << std::endl <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"С…РѕСЂРѕ"
+                 "С€Рѕ\" Рё \"РѕС‚Р»РёС‡РЅРѕ\": " << studentNumber << "." << std::endl <<
                  std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -858,7 +858,7 @@ void listFourFive (student *List, bool length)
 void listFive (student *List, bool length)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, которые учатся только на \"отлично\":" <<
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"РѕС‚Р»РёС‡РЅРѕ\":" <<
                  std::endl << std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
@@ -877,9 +877,9 @@ void listFive (student *List, bool length)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, которые учатся только на \"отли"
-                 "чно\": " << studentNumber << "." << std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹Рµ СѓС‡Р°С‚СЃСЏ С‚РѕР»СЊРєРѕ РЅР° \"РѕС‚Р»Рё"
+                 "С‡РЅРѕ\": " << studentNumber << "." << std::endl << std::endl;
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -890,8 +890,8 @@ void listFive (student *List, bool length)
 void listNumber (student *List, bool length, int Number)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, имеющих номер " << Number << " в списке гру"
-                 "ппы:" << std::endl << std::endl;
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, РёРјРµСЋС‰РёС… РЅРѕРјРµСЂ " << Number << " РІ СЃРїРёСЃРєРµ РіСЂСѓ"
+                 "РїРїС‹:" << std::endl << std::endl;
     int studentNumber=0;
     for (unsigned int i=0; i<listSize; i++)
       {
@@ -909,10 +909,10 @@ void listNumber (student *List, bool length, int Number)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, имеющих номер " << Number <<
-                " в списке группы: " << studentNumber << "." << std::endl <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, РёРјРµСЋС‰РёС… РЅРѕРјРµСЂ " << Number <<
+                " РІ СЃРїРёСЃРєРµ РіСЂСѓРїРїС‹: " << studentNumber << "." << std::endl <<
                 std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -923,8 +923,8 @@ void listNumber (student *List, bool length, int Number)
 void listTime (student *List, bool length, tm Begin, int Noon)
   {
     system (CLEARSCREEN);
-    std::cout << "Список студентов, записи о которых сделаны в указанный промеж"
-                 "уток времени:" << std::endl << std::endl;
+    std::cout << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ, Р·Р°РїРёСЃРё Рѕ РєРѕС‚РѕСЂС‹С… СЃРґРµР»Р°РЅС‹ РІ СѓРєР°Р·Р°РЅРЅС‹Р№ РїСЂРѕРјРµР¶"
+                 "СѓС‚РѕРє РІСЂРµРјРµРЅРё:" << std::endl << std::endl;
     tm End;
     End.tm_sec=Begin.tm_sec;
     End.tm_min=Begin.tm_min;
@@ -973,10 +973,10 @@ void listTime (student *List, bool length, tm Begin, int Noon)
             studentNumber++;
           }
       }
-    std::cout << std::endl << "Всего студентов, записи о которых сделаны в указ"
-                 "анный промежуток времени: " << studentNumber << "." <<
+    std::cout << std::endl << "Р’СЃРµРіРѕ СЃС‚СѓРґРµРЅС‚РѕРІ, Р·Р°РїРёСЃРё Рѕ РєРѕС‚РѕСЂС‹С… СЃРґРµР»Р°РЅС‹ РІ СѓРєР°Р·"
+                 "Р°РЅРЅС‹Р№ РїСЂРѕРјРµР¶СѓС‚РѕРє РІСЂРµРјРµРЅРё: " << studentNumber << "." <<
                  std::endl << std::endl;
-    int answer=getNumericAnswer(0, listSize, "Введите номер студента в списке, карточку которого вы хотите посмотреть (для возврата в главное меню введите 0): ");
+    int answer=getNumericAnswer(0, listSize, "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ, РєР°СЂС‚РѕС‡РєСѓ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РїРѕСЃРјРѕС‚СЂРµС‚СЊ (РґР»СЏ РІРѕР·РІСЂР°С‚Р° РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ РІРІРµРґРёС‚Рµ 0): ");
     if (answer)
       {
         studentMenu (List, answer);
@@ -987,7 +987,7 @@ void listTime (student *List, bool length, tm Begin, int Noon)
 tm getTmDate ()
   {
     tm Day;
-    std::cout << "Введите дату (формат: ДД.ММ.ГГГГ): ";
+    std::cout << "Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ (С„РѕСЂРјР°С‚: Р”Р”.РњРњ.Р“Р“Р“Р“): ";
     char date[11];
     std::cin.getline(date, 11);
     Day.tm_sec=0;
@@ -999,7 +999,7 @@ tm getTmDate ()
     Day.tm_isdst=-1;
     if (mktime(&Day)<0)
       {
-        std::cout << "Некорректный ввод!" << std::endl;
+        std::cout << "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ!" << std::endl;
         Day=getTmDate();
       }
     return Day;
